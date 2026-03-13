@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.eushi.design)",
+      "WebFetch(domain:eushi.design)",
+      "WebSearch",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm)",
+      "Bash(npm install next@latest react@latest react-dom@latest typescript @types/react @types/node @types/react-dom)",
+      "Bash(npm install tailwindcss @tailwindcss/postcss postcss framer-motion clsx tailwind-merge)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm run dev)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(taskkill //f //im node.exe)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/en)",
+      "Bash(curl -s http://localhost:3000/es)",
+      "Bash(curl -s -L http://localhost:3000/es)",
+      "Bash(curl -s -m 10 http://localhost:3000/es)",
+      "Bash(tr '>' '\\\\n')",
+      "Bash(tr '<' '\\\\n')",
+      "Bash(curl -v -m 10 \"http://localhost:3000/es\")",
+      "Bash(curl -s -m 5 \"http://localhost:3000/en\")",
+      "Bash(curl -s -m 5 \"http://localhost:3000\")",
+      "Bash(curl -s -m 10 \"http://localhost:3000/en\")"
+    ]
+  }
+}

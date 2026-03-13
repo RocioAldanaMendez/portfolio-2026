@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Home",
+    "work": "My Work",
+    "experience": "Experience",
+    "about": "About",
+    "contact": "Let's Chat"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Rocio Mendez",
+    "role": "Systems Engineer and Developer",
+    "description": "I design and build AI products, scalable backend systems, and cloud infrastructure. I work across the full stack of delivery: architecture, implementation, deployment, and iteration.",
+    "scrollHint": "Scroll to explore"
+  },
+  "projects": {
+    "sectionTitle": "Selected projects",
+    "sectionSubtitle": "Real systems, AI-driven products, and backend platforms designed for scale.",
+    "viewMore": "View details",
+    "items": {
+      "svant": {
+        "title": "Svant / SvantLite",
+        "description": "Production-ready emissions accounting platform. I built features for carbon data tracking, reporting, and operational follow-through.",
+        "company": "WildCat Media",
+        "date": "Apr 2025 - Aug 2025"
+      },
+      "chatai": {
+        "title": "Chat AI",
+        "description": "AI chatbot for advertising metrics using NLP, embeddings, and BigQuery integrations to surface real-time business insights.",
+        "company": "Super SRL",
+        "date": "Dec 2023 - Oct 2024"
+      },
+      "scoring": {
+        "title": "Scoring Tool",
+        "description": "Automated multimedia evaluation system. AI models analyzed advertising content and produced performance scores at scale.",
+        "company": "Super SRL",
+        "date": "Nov 2023 - Sep 2024"
+      },
+      "superhumans": {
+        "title": "SuperHumans",
+        "description": "AI-based talent selection system with machine learning models for automated candidate evaluation and ranking.",
+        "company": "Super SRL",
+        "date": "Oct 2023"
+      },
+      "medinova": {
+        "title": "MEDINOVA",
+        "description": "Medical and administrative system with AI models for sepsis detection and ICU mortality prediction.",
+        "company": "Bootcamp Project",
+        "date": "Mar 2023"
+      }
+    }
+  },
+  "experience": {
+    "sectionTitle": "Experience",
+    "sectionSubtitle": "A path centered on software engineering, AI systems, and production-ready delivery.",
+    "items": {
+      "wildcat": {
+        "role": "SSr. Backend Developer",
+        "company": "WildCat Media",
+        "location": "Remote, Argentina",
+        "date": "Apr 2025 - Present",
+        "description": "End-to-end backend development, Azure architecture, deployments, and QA across multiple environments. Built systems for events, worked closely with frontend, and contributed to security decisions."
+      },
+      "docente": {
+        "role": "AI Tools Professor",
+        "company": "UNSTA & UFASTA",
+        "location": "Remote, Argentina",
+        "date": "Aug 2024 - Present",
+        "description": "Designed and taught AI tools courses across two engineering faculties, connecting technical concepts with practical application."
+      },
+      "super": {
+        "role": "AI Architect Solutions Specialist",
+        "company": "Super SRL",
+        "location": "Buenos Aires, Argentina",
+        "date": "Sep 2023 - Mar 2025",
+        "description": "Built end-to-end AI systems integrating classification models, chatbots, OCR, NLP, LLMs, computer vision, SSO, and analytics dashboards."
+      },
+      "coder": {
+        "role": "Data Analytics Tutor",
+        "company": "CoderHouse",
+        "location": "Argentina",
+        "date": "Jul 2023 - Oct 2023",
+        "description": "Supported students through technical mentoring, assignment reviews, and active follow-up during the learning process."
+      },
+      "conae": {
+        "role": "Remote Sensing Professor",
+        "company": "CONAE",
+        "location": "Argentina",
+        "date": "Feb 2022 - Dec 2022",
+        "description": "Taught classes on spatial data usage and satellite imagery interpretation at Argentina's National Space Agency."
+      },
+      "prefectura": {
+        "role": "Software Developer",
+        "company": "Prefectura Naval Argentina",
+        "location": "Buenos Aires, Argentina",
+        "date": "Dec 2018 - Apr 2023",
+        "description": "Led legacy system reengineering and migration work while building new software and technical documentation."
+      }
+    }
+  },
+  "about": {
+    "sectionTitle": "About",
+    "bio": "I am a Systems Engineer and developer focused on artificial intelligence, backend engineering, and cloud infrastructure. My work is centered on building robust, efficient systems that are ready for real use.",
+    "educationTitle": "Education",
+    "education": {
+      "degree1": "Systems Engineering - UdeMM (2020 - 2024)",
+      "degree2": "Data Scientist - Henry Bootcamp (2022 - 2023)"
+    },
+    "certificationsTitle": "Certifications",
+    "certifications": [
+      "AI Security and Software Protection - Santander Academy (2025)",
+      "AWS Cloud Foundations & Cloud Practitioner (2024)",
+      "ML Foundation & ML for NLP - AWS Academy (2024)",
+      "Git: Collaborative Development and OOP - Educacion IT (2021)"
+    ],
+    "languagesTitle": "Languages",
+    "languages": {
+      "es": "Spanish - Native",
+      "en": "English - B2",
+      "ru": "Russian - B1"
+    },
+    "skillsTitle": "Tech Stack"
+  },
+  "contact": {
+    "heading": "Let's build together",
+    "subheading": "If you have a product, an idea, or a technical challenge, let's talk and turn it into something solid.",
+    "emailCta": "Send me an email",
+    "or": "or find me on"
+  },
+  "footer": {
+    "copyright": "Rocio Mendez. All rights reserved.",
+    "resume": "Download CV"
+  }
+}

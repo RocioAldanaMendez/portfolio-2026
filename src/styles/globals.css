@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #e8e7e4;
+  --color-background-soft: #f4f2ee;
+  --color-background-card: rgba(255, 255, 255, 0.55);
+  --color-background-strong: #111111;
+
+  --color-foreground: #111111;
+  --color-foreground-secondary: #55514d;
+  --color-foreground-muted: #8b857f;
+  --color-foreground-inverse: #f5f2ed;
+
+  --color-accent: #2647ff;
+  --color-accent-soft: rgba(38, 71, 255, 0.1);
+  --color-highlight: #d94f2b;
+
+  --color-border: rgba(17, 17, 17, 0.08);
+  --color-border-strong: rgba(17, 17, 17, 0.16);
+
+  --shadow-card: 0 20px 60px rgba(17, 17, 17, 0.08);
+
+  --animate-float-slow: float-slow 6s ease-in-out infinite;
+  --animate-bounce-slow: bounce-slow 2s ease-in-out infinite;
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0px); opacity: 0.7; }
+    50% { transform: translateY(6px); opacity: 1; }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(38, 71, 255, 0.08), transparent 26%),
+    radial-gradient(circle at top right, rgba(217, 79, 43, 0.08), transparent 20%),
+    linear-gradient(180deg, #eceae6 0%, #e5e3df 100%);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background-color: rgba(38, 71, 255, 0.18);
+  color: var(--color-foreground);
+}

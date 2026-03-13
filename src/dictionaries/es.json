@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "work": "Proyectos",
+    "experience": "Experiencia",
+    "about": "Sobre mi",
+    "contact": "Hablemos"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Rocio Mendez",
+    "role": "Ingeniera en Sistemas y Desarrolladora",
+    "description": "Diseno y construyo productos con IA, backend escalable e infraestructura cloud. Trabajo de punta a punta: desde arquitectura y desarrollo hasta despliegue y mejora continua.",
+    "scrollHint": "Desplaza para explorar"
+  },
+  "projects": {
+    "sectionTitle": "Proyectos destacados",
+    "sectionSubtitle": "Sistemas reales, productos con IA y plataformas backend pensadas para escalar.",
+    "viewMore": "Ver detalles",
+    "items": {
+      "svant": {
+        "title": "Svant / SvantLite",
+        "description": "Plataforma para contabilizar emisiones con despliegues en produccion. Desarrolle funcionalidades para seguimiento, trazabilidad y reportes de datos de carbono.",
+        "company": "WildCat Media",
+        "date": "Abr 2025 - Ago 2025"
+      },
+      "chatai": {
+        "title": "Chat AI",
+        "description": "Chatbot con IA para metricas publicitarias usando NLP, embeddings e integracion con BigQuery para obtener insights operativos en tiempo real.",
+        "company": "Super SRL",
+        "date": "Dic 2023 - Oct 2024"
+      },
+      "scoring": {
+        "title": "Scoring Tool",
+        "description": "Sistema de evaluacion automatizada de contenido multimedia. Analisis con IA de piezas audiovisuales para generar scores de rendimiento.",
+        "company": "Super SRL",
+        "date": "Nov 2023 - Sep 2024"
+      },
+      "superhumans": {
+        "title": "SuperHumans",
+        "description": "Sistema de seleccion de talento basado en IA con modelos de machine learning para clasificar, evaluar y priorizar candidatos.",
+        "company": "Super SRL",
+        "date": "Oct 2023"
+      },
+      "medinova": {
+        "title": "MEDINOVA",
+        "description": "Sistema medico y administrativo con modelos de IA para deteccion de sepsis y prediccion de mortalidad en unidades de cuidados intensivos.",
+        "company": "Proyecto Bootcamp",
+        "date": "Mar 2023"
+      }
+    }
+  },
+  "experience": {
+    "sectionTitle": "Experiencia",
+    "sectionSubtitle": "Un recorrido enfocado en ingenieria de software, inteligencia artificial y sistemas en produccion.",
+    "items": {
+      "wildcat": {
+        "role": "SSr. Backend Developer",
+        "company": "WildCat Media",
+        "location": "Remoto, Argentina",
+        "date": "Abr 2025 - Actualidad",
+        "description": "Desarrollo backend end-to-end, arquitectura en Azure, despliegues y QA en multiples ambientes. Construccion de sistemas para eventos, trabajo cercano con frontend y asesoramiento en seguridad."
+      },
+      "docente": {
+        "role": "Docente en Herramientas de IA",
+        "company": "UNSTA & UFASTA",
+        "location": "Remoto, Argentina",
+        "date": "Ago 2024 - Actualidad",
+        "description": "Diseno y dicto clases sobre herramientas de IA en dos facultades de ingenieria, conectando conceptos tecnicos con aplicacion practica."
+      },
+      "super": {
+        "role": "AI Architect Solutions Specialist",
+        "company": "Super SRL",
+        "location": "Buenos Aires, Argentina",
+        "date": "Sep 2023 - Mar 2025",
+        "description": "Desarrollo de sistemas con IA de punta a punta. Integracion de modelos de clasificacion, chatbots, OCR, NLP, LLMs, vision por computadora, SSO y dashboards de analitica."
+      },
+      "coder": {
+        "role": "Tutor Data Analytics",
+        "company": "CoderHouse",
+        "location": "Argentina",
+        "date": "Jul 2023 - Oct 2023",
+        "description": "Acompanamiento tecnico a estudiantes, resolucion de dudas, correccion de entregas y seguimiento del proceso de aprendizaje."
+      },
+      "conae": {
+        "role": "Profesora de Teledeteccion",
+        "company": "CONAE",
+        "location": "Argentina",
+        "date": "Feb 2022 - Dic 2022",
+        "description": "Dictado de clases sobre uso e interpretacion de informacion espacial en la Comision Nacional de Actividades Espaciales."
+      },
+      "prefectura": {
+        "role": "Programadora",
+        "company": "Prefectura Naval Argentina",
+        "location": "Buenos Aires, Argentina",
+        "date": "Dic 2018 - Abr 2023",
+        "description": "Reingenieria y migracion de sistemas heredados, desarrollo de nuevas soluciones y documentacion funcional y tecnica."
+      }
+    }
+  },
+  "about": {
+    "sectionTitle": "Sobre mi",
+    "bio": "Soy Ingeniera en Sistemas y desarrolladora. Me especializo en inteligencia artificial, backend e infraestructura cloud, con experiencia construyendo soluciones robustas, eficientes y listas para produccion.",
+    "educationTitle": "Educacion",
+    "education": {
+      "degree1": "Ingenieria en Sistemas - UdeMM (2020 - 2024)",
+      "degree2": "Data Scientist - Henry Bootcamp (2022 - 2023)"
+    },
+    "certificationsTitle": "Certificaciones",
+    "certifications": [
+      "Proteccion de software y seguridad de IA - Santander Academy (2025)",
+      "AWS Cloud Foundations & Cloud Practitioner (2024)",
+      "ML Foundation & ML for NLP - AWS Academy (2024)",
+      "Git: Desarrollo colaborativo y POO - Educacion IT (2021)"
+    ],
+    "languagesTitle": "Idiomas",
+    "languages": {
+      "es": "Espanol - Nativo",
+      "en": "Ingles - B2",
+      "ru": "Ruso - B1"
+    },
+    "skillsTitle": "Tecnologias"
+  },
+  "contact": {
+    "heading": "Trabajemos juntas",
+    "subheading": "Si tienes un producto, una idea o un desafio tecnico, conversemos y vemos como llevarlo a algo solido.",
+    "emailCta": "Enviame un email",
+    "or": "o encuentrame en"
+  },
+  "footer": {
+    "copyright": "Rocio Mendez. Todos los derechos reservados.",
+    "resume": "Descargar CV"
+  }
+}
