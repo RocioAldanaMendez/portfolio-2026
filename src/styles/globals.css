@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #e8e7e4;
-  --color-background-soft: #f4f2ee;
+  --color-background: #efeeeb;
+  --color-background-soft: #f7f5f1;
   --color-background-card: rgba(255, 255, 255, 0.55);
   --color-background-strong: #111111;
 
@@ -41,13 +41,40 @@ html {
 body {
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(38, 71, 255, 0.08), transparent 26%),
-    radial-gradient(circle at top right, rgba(217, 79, 43, 0.08), transparent 20%),
-    linear-gradient(180deg, #eceae6 0%, #e5e3df 100%);
+    radial-gradient(circle at top left, rgba(38, 71, 255, 0.05), transparent 24%),
+    radial-gradient(circle at top right, rgba(217, 79, 43, 0.05), transparent 18%),
+    linear-gradient(180deg, #f1efec 0%, #ebe8e4 100%);
   color: var(--color-foreground);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body[data-theme="dark"] {
+  --color-background: #121212;
+  --color-background-soft: #1b1b1b;
+  --color-background-card: rgba(24, 24, 24, 0.72);
+  --color-background-strong: #f5f2ed;
+
+  --color-foreground: #f5f2ed;
+  --color-foreground-secondary: #c3beb6;
+  --color-foreground-muted: #968f86;
+  --color-foreground-inverse: #111111;
+
+  --color-accent: #7f96ff;
+  --color-accent-soft: rgba(127, 150, 255, 0.14);
+  --color-highlight: #f28d67;
+
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.16);
+
+  --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.32);
+
+  background:
+    radial-gradient(circle at top left, rgba(127, 150, 255, 0.08), transparent 24%),
+    radial-gradient(circle at top right, rgba(242, 141, 103, 0.07), transparent 18%),
+    linear-gradient(180deg, #161616 0%, #101010 100%);
 }
 
 a {

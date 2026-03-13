@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { LanguageToggle } from "./LanguageToggle";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface NavbarProps {
   dict: {
@@ -85,11 +86,15 @@ export function Navbar({ dict, locale }: NavbarProps) {
               </a>
             ))}
             <div className="pl-1">
+              <ThemeToggle />
+            </div>
+            <div className="pl-1">
               <LanguageToggle locale={locale} />
             </div>
           </div>
 
           <div className="flex items-center gap-4 md:hidden">
+            <ThemeToggle />
             <LanguageToggle locale={locale} />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -135,6 +140,7 @@ export function Navbar({ dict, locale }: NavbarProps) {
                   {dict[link.key as keyof typeof dict]}
                 </motion.a>
               ))}
+              <ThemeToggle />
             </nav>
           </motion.div>
         )}

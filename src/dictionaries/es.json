@@ -8,9 +8,9 @@
   },
   "hero": {
     "greeting": "Hola, soy",
-    "name": "Rocio Mendez",
+    "name": "Ro",
     "role": "Ingeniera en Sistemas y Desarrolladora",
-    "description": "Diseno y construyo productos con IA, backend escalable e infraestructura cloud. Trabajo de punta a punta: desde arquitectura y desarrollo hasta despliegue y mejora continua.",
+    "description": "Diseno y construyo productos con IA, backend escalable e infraestructura cloud.",
     "scrollHint": "Desplaza para explorar"
   },
   "projects": {
@@ -41,12 +41,6 @@
         "description": "Sistema de seleccion de talento basado en IA con modelos de machine learning para clasificar, evaluar y priorizar candidatos.",
         "company": "Super SRL",
         "date": "Oct 2023"
-      },
-      "medinova": {
-        "title": "MEDINOVA",
-        "description": "Sistema medico y administrativo con modelos de IA para deteccion de sepsis y prediccion de mortalidad en unidades de cuidados intensivos.",
-        "company": "Proyecto Bootcamp",
-        "date": "Mar 2023"
       }
     }
   },

@@ -8,9 +8,9 @@
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "name": "Rocio Mendez",
+    "name": "Ro",
     "role": "Systems Engineer and Developer",
-    "description": "I design and build AI products, scalable backend systems, and cloud infrastructure. I work across the full stack of delivery: architecture, implementation, deployment, and iteration.",
+    "description": "I design and build AI products, scalable backend systems, and cloud infrastructure.",
     "scrollHint": "Scroll to explore"
   },
   "projects": {
@@ -41,12 +41,6 @@
         "description": "AI-based talent selection system with machine learning models for automated candidate evaluation and ranking.",
         "company": "Super SRL",
         "date": "Oct 2023"
-      },
-      "medinova": {
-        "title": "MEDINOVA",
-        "description": "Medical and administrative system with AI models for sepsis detection and ICU mortality prediction.",
-        "company": "Bootcamp Project",
-        "date": "Mar 2023"
       }
     }
   },

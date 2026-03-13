@@ -1,21 +1,29 @@
 import type { Metadata } from "next";
-import { Manrope, Space_Grotesk } from "next/font/google";
+import { Archivo, Bricolage_Grotesque } from "next/font/google";
 import "@/styles/globals.css";
 
-const manrope = Manrope({
+const archivo = Archivo({
   subsets: ["latin"],
   variable: "--font-body",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
   variable: "--font-display",
 });
 
 export const metadata: Metadata = {
-  title: "Rocio Mendez | AI Engineer & Backend Developer",
+  title: {
+    default: "System Engineer",
+    template: "%s",
+  },
   description:
     "Portfolio of Rocio Mendez. Systems Engineer focused on AI, backend architecture, and cloud infrastructure.",
+  icons: {
+    icon: "/images/branding/icono-dp.png?v=3",
+    shortcut: "/images/branding/icono-dp.png?v=3",
+    apple: "/images/branding/icono-dp.png?v=3",
+  },
 };
 
 export default function RootLayout({
@@ -25,7 +33,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${manrope.variable} ${spaceGrotesk.variable}`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.addEventListener('DOMContentLoaded',function(){document.body.dataset.theme=t;});}}catch(e){}",
+          }}
+        />
+      </head>
+      <body className={`${archivo.variable} ${bricolageGrotesque.variable}`}>
         {children}
       </body>
     </html>

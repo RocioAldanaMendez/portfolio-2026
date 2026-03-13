@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 interface HeroProps {
   dict: {
@@ -14,66 +15,116 @@ interface HeroProps {
 
 function FloatingBadge({ label, className }: { label: string; className: string }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 18 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`absolute hidden rounded-sm border border-border bg-background-soft px-5 py-3 text-[15px] font-semibold text-foreground shadow-[var(--shadow-card)] lg:block ${className}`}
+    <div
+      className={`rounded-sm border border-border bg-background-soft px-5 py-3 text-[15px] font-semibold text-foreground shadow-[var(--shadow-card)] ${className}`}
     >
       {label}
-    </motion.div>
+    </div>
   );
 }
 
 function Pointer({ className }: { className: string }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, rotate: -10 }}
-      animate={{ opacity: 1, rotate: 0 }}
-      transition={{ delay: 0.3, duration: 0.5 }}
-      className={`absolute hidden lg:block ${className}`}
-    >
+    <div className={className}>
       <svg width="24" height="28" viewBox="0 0 18 24" fill="none">
         <path
           d="M4.39 1.46L0.57 17.88c-.3 1.27.97 2.31 2.1 1.72l3.93-2.06c.32-.17.7-.18 1.03-.03l4.28 1.98c1.2.56 2.45-.57 2.04-1.84L9.13 1.4C8.72.14 6.87.14 6.46 1.4L4.39 1.46z"
           fill="#222222"
         />
       </svg>
+    </div>
+  );
+}
+
+function CursorCluster({
+  label,
+  className,
+  pointerClassName,
+}: {
+  label: string;
+  className: string;
+  pointerClassName: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+
+    let x = 0;
+    let y = 0;
+    let targetX = 0;
+    let targetY = 0;
+    let pickTimeout = 0;
+    let animationId = 0;
+    const range = 18;
+
+    const pickTarget = () => {
+      targetX = (Math.random() - 0.5) * range * 2;
+      targetY = (Math.random() - 0.5) * range * 2;
+      pickTimeout = window.setTimeout(pickTarget, 800 + Math.random() * 1500);
+    };
+
+    const animate = () => {
+      x += (targetX - x) * 0.04;
+      y += (targetY - y) * 0.04;
+      node.style.transform = `translate(${x.toFixed(2)}px, ${y.toFixed(2)}px)`;
+      animationId = window.requestAnimationFrame(animate);
+    };
+
+    pickTimeout = window.setTimeout(() => {
+      pickTarget();
+      animate();
+    }, Math.random() * 1000);
+
+    return () => {
+      window.clearTimeout(pickTimeout);
+      window.cancelAnimationFrame(animationId);
+    };
+  }, []);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, scale: 0.92 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 0.3, duration: 0.5 }}
+      className={`absolute hidden lg:flex ${className}`}
+    >
+      <div className="relative">
+        <FloatingBadge label={label} className="block" />
+        <Pointer className={`absolute ${pointerClassName}`} />
+      </div>
     </motion.div>
   );
 }
 
 function Patch({
-  title,
-  subtitle,
+  src,
+  alt,
   className,
-  palette,
+  rotation,
+  hoverRotation,
 }: {
-  title: string;
-  subtitle: string;
+  src: string;
+  alt: string;
   className: string;
-  palette: string;
+  rotation: number;
+  hoverRotation: number;
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.92, rotate: -6 }}
-      animate={{ opacity: 1, scale: 1, rotate: 5 }}
-      whileHover={{ scale: 1.05, rotate: 8 }}
+      initial={{ opacity: 0, scale: 0.92, rotate: rotation }}
+      animate={{ opacity: 1, scale: 1, rotate: rotation }}
+      whileHover={{ scale: 1.05, rotate: hoverRotation }}
       transition={{ duration: 0.7 }}
-      className={`absolute hidden aspect-square items-center justify-center rounded-full border-[5px] border-[#d2c7b5] shadow-[var(--shadow-card)] lg:flex ${className}`}
-      style={{ background: palette }}
+      className={`absolute hidden aspect-square items-center justify-center lg:flex ${className}`}
     >
-      <div className="flex h-[78%] w-[78%] flex-col items-center justify-center rounded-full border border-black/10 bg-background-soft text-center">
-        <span
-          className="text-5xl font-extrabold uppercase tracking-[0.2em]"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          {title}
-        </span>
-        <span className="mt-2 text-xs font-bold uppercase tracking-[0.24em] text-foreground-secondary">
-          {subtitle}
-        </span>
-      </div>
+      <img
+        src={src}
+        alt={alt}
+        className="h-full w-full rounded-full object-contain drop-shadow-[0_1px_4px_rgba(0,0,0,0.15)]"
+      />
     </motion.div>
   );
 }
@@ -103,21 +154,29 @@ export function Hero({ dict }: HeroProps) {
       className="relative flex min-h-screen items-center justify-center overflow-hidden px-5 pb-14 pt-28 md:px-8 lg:px-12"
     >
       <div className="absolute inset-x-0 top-24 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
-      <FloatingBadge label="Systems Engineer" className="left-[16%] top-[30%]" />
-      <Pointer className="left-[25%] top-[37%] rotate-[110deg]" />
-      <Pointer className="bottom-[31%] right-[23%] -rotate-[70deg]" />
-      <FloatingBadge label="AI Specialist" className="bottom-[26%] right-[12%]" />
-      <Patch
-        title="AR"
-        subtitle="Buenos Aires"
-        className="-left-10 bottom-[8%] h-[250px] w-[250px]"
-        palette="linear-gradient(145deg, #a8d4ff 0%, #f3f7fb 60%, #df4f35 60%, #df4f35 100%)"
+      <CursorCluster
+        label="Systems Engineer"
+        className="left-[15%] top-[31%]"
+        pointerClassName="left-[74%] top-[86%] rotate-[110deg]"
+      />
+      <CursorCluster
+        label="AI Specialist"
+        className="bottom-[27%] right-[11%]"
+        pointerClassName="-left-[18%] top-[-22%] -rotate-[70deg]"
       />
       <Patch
-        title="AI"
-        subtitle="Backend + Cloud"
+        src="/images/hero/sticker-left.jpg"
+        alt="Left hero sticker"
+        className="-left-10 bottom-[8%] h-[250px] w-[250px]"
+        rotation={10}
+        hoverRotation={16}
+      />
+      <Patch
+        src="/images/hero/sticker-right.jpg"
+        alt="Right hero sticker"
         className="-right-6 top-[16%] h-[220px] w-[220px]"
-        palette="linear-gradient(145deg, #f2cc52 0%, #e6a81a 60%, #efddb0 100%)"
+        rotation={-6}
+        hoverRotation={0}
       />
 
       <motion.div
@@ -128,7 +187,7 @@ export function Hero({ dict }: HeroProps) {
       >
         <motion.h1
           variants={itemVariants}
-          className="mx-auto max-w-[900px] text-[64px] font-black leading-[0.92] tracking-[-0.06em] text-foreground sm:text-[92px] lg:text-[132px]"
+          className="mx-auto max-w-[760px] text-[64px] font-black leading-[0.92] tracking-[-0.06em] text-foreground sm:text-[84px] lg:text-[112px]"
           style={{ fontFamily: "var(--font-display)" }}
         >
           {dict.greeting.toLowerCase()} {dict.name.toLowerCase()}
@@ -136,25 +195,10 @@ export function Hero({ dict }: HeroProps) {
 
         <motion.p
           variants={itemVariants}
-          className="mx-auto mt-8 max-w-[720px] text-lg leading-[1.65] text-foreground-secondary sm:text-[22px]"
+          className="mx-auto mt-8 max-w-[560px] text-base leading-[1.6] text-foreground-secondary sm:text-[18px]"
         >
           {dict.description}
         </motion.p>
-
-        <motion.div
-          variants={itemVariants}
-          className="mt-10 flex flex-wrap items-center justify-center gap-3"
-        >
-          <span className="rounded-full border border-border-strong bg-background-card px-5 py-2 text-[12px] font-extrabold uppercase tracking-[0.18em] text-foreground shadow-[var(--shadow-card)] backdrop-blur">
-            AI Products
-          </span>
-          <span className="rounded-full border border-border-strong bg-background-card px-5 py-2 text-[12px] font-extrabold uppercase tracking-[0.18em] text-foreground shadow-[var(--shadow-card)] backdrop-blur">
-            Scalable Backend
-          </span>
-          <span className="rounded-full border border-border-strong bg-background-card px-5 py-2 text-[12px] font-extrabold uppercase tracking-[0.18em] text-foreground shadow-[var(--shadow-card)] backdrop-blur">
-            Cloud Systems
-          </span>
-        </motion.div>
       </motion.div>
 
       <motion.div
